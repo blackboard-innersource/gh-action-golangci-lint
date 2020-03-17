@@ -6,14 +6,15 @@ import {createHash} from 'crypto'
 import * as fs from 'fs'
 
 /**
- * The binary name
+ * The binary name.
  */
 export const toolName = 'golangci-lint'
 
 /**
- * Install the tool
- * @param version the version to install
- * @param checksum optionally provide a checksum to validate the download
+ * Install the tool.
+ *
+ * @param {string} version - The version to install.
+ * @param {string} checksum - Optionally provide a checksum to validate the download.
  */
 export async function installer(
   version: string,
@@ -32,9 +33,10 @@ export async function installer(
 }
 
 /**
- * Actually perform the tool download and verify checksum if passed
- * @param version the version to install
- * @param checksum optionally provide a checksum to validate the download
+ * Actually perform the tool download and verify checksum if passed.
+ *
+ * @param {string} version - The version to install.
+ * @param {string} checksum - Optionally provide a checksum to validate the download.
  */
 async function download(version: string, checksum?: string): Promise<string> {
   const arch = sys.getArch()
@@ -69,9 +71,10 @@ async function download(version: string, checksum?: string): Promise<string> {
 }
 
 /**
- * Verify the file against checksum
- * @param path file path to verify
- * @param checksum optionally provide a checksum to validate the file
+ * Verify the file against checksum.
+ *
+ * @param {string} path - File path to verify.
+ * @param {string} checksum - Optionally provide a checksum to validate the file.
  */
 export function checksumVerify(path: string, checksum?: string): void {
   if (!checksum) {
