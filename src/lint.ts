@@ -6,8 +6,9 @@ import {issueCommand} from '@actions/core/lib/command'
 import * as os from 'os'
 
 /**
- * Run the linter
- * @param argStr argument string to pass to the linter
+ * Run the linter.
+ *
+ * @param {string} argStr - Argument string to pass to the linter.
  */
 export async function lint(argStr: string): Promise<Linter> {
   core.info('🏃 running linter')
@@ -38,16 +39,20 @@ export async function lint(argStr: string): Promise<Linter> {
 }
 
 /**
- * Decode json to Linter
- * @param json
+ * Decode json to Linter.
+ *
+ * @param {string} json - The lint JSON output.
+ * @returns {Linter} - The lint report.
  */
 export function toLinter(json: string): Linter {
   return JSON.parse(json)
 }
 
 /**
- * Convert Linter to warning and error GitHub annotations
- * @param linter
+ * Convert Linter to warning and error GitHub annotations.
+ *
+ * @param {Linter} linter - The lint report.
+ * @returns {boolean} - If there were any fixable errors found.
  */
 export function report(linter: Linter): boolean {
   if (linter.Issues === null) {
