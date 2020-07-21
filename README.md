@@ -23,7 +23,7 @@ steps:
   - name: lint
     uses: blackboard-innersource/gh-action-golangci-lint@v1
     with:
-      version: 1.23.6
+      version: 1.28.2
 ```
 
 For added security, you can specify a download checksum. To get the checksum, find the
@@ -32,7 +32,7 @@ page. Download the file, open it, and find the line with `linux-amd64` (or the p
 It would look like this:
 
 ```
-9a00786e1671f9ddbc8eeed51fe85825bcb10a2586ac8ab510c4ceb1ec499729  golangci-lint-1.23.6-linux-amd64.tar.gz
+c893b07dd7d2c8e13b6380dd52781bb6732f7f541d90da2dc941be5f7e8be6fb  golangci-lint-1.28.2-linux-amd64.tar.gz
 ```
 
 Copy the checksum value enter that into the `checksum` input:
@@ -42,8 +42,8 @@ steps:
   - name: lint
     uses: blackboard-innersource/gh-action-golangci-lint@v1
     with:
-      version: 1.23.6
-      checksum: 9a00786e1671f9ddbc8eeed51fe85825bcb10a2586ac8ab510c4ceb1ec499729
+      version: 1.28.2
+      checksum: c893b07dd7d2c8e13b6380dd52781bb6732f7f541d90da2dc941be5f7e8be6fb
 ```
 
 ### Usage: control failure
@@ -57,7 +57,7 @@ steps:
   - name: lint
     uses: blackboard-innersource/gh-action-golangci-lint@v1
     with:
-      version: 1.23.6
+      version: 1.28.2
       failOnFixable: false
 ```
 
@@ -68,7 +68,7 @@ steps:
   - name: lint
     uses: blackboard-innersource/gh-action-golangci-lint@v1
     with:
-      version: 1.23.6
+      version: 1.28.2
       failOnIssue: true
 ```
 
@@ -81,7 +81,7 @@ steps:
   - name: lint
     uses: blackboard-innersource/gh-action-golangci-lint@v1
     with:
-      version: 1.23.6
+      version: 1.28.2
       args: -E gofmt --no-config
 ```
 
