@@ -4,6 +4,10 @@ import * as path from 'path'
 import * as osm from 'os'
 import * as ioUtil from '@actions/io/lib/io-util'
 
+// Have to mock the whole module otherwise get this error:
+// TypeError: Cannot set property platform of [object Object] which has only a getter
+jest.mock('os')
+
 describe('installer', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let os = {} as any
