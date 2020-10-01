@@ -38,7 +38,7 @@ describe('installer', () => {
     // @actions/io
     ioUtilSpy = jest.spyOn(ioUtil, 'exists')
 
-    // writes
+    // writes - just captures stdout from action
     cnSpy = jest.spyOn(process.stdout, 'write')
     cnSpy.mockImplementation()
   })
@@ -46,14 +46,6 @@ describe('installer', () => {
   afterEach(() => {
     jest.resetAllMocks()
     jest.clearAllMocks()
-  })
-
-  it('finds a version in the cache and adds it to the path', async () => {
-    const toolPath = path.normalize('/cache/golangci-lint/1.23.6/amd64')
-    findSpy.mockImplementation(() => toolPath)
-    await installer('1.23.6')
-
-    expect(cnSpy).toHaveBeenCalledWith(`::add-path::${toolPath}${osm.EOL}`)
   })
 
   it('handles download error', async () => {
@@ -97,7 +89,6 @@ describe('installer', () => {
     expect(dlSpy).toHaveBeenCalled()
     expect(exSpy).toHaveBeenCalled()
     expect(cacheSpy).toHaveBeenCalled()
-    expect(cnSpy).toHaveBeenCalledWith(`::add-path::${toolPath}${osm.EOL}`)
   })
 
   it('can verify checksum', async () => {
