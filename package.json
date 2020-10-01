@@ -11,7 +11,7 @@
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm run pack && npm run test"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
     "@zeit/ncc": "^0.21.1",
     "eslint": "^6.8.0",
     "eslint-plugin-github": "^3.4.1",
-    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jest": "^23.20.0",
     "jest": "^25.5.4",
     "jest-circus": "^25.5.4",
     "js-yaml": "^3.14.0",
