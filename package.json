@@ -11,7 +11,7 @@
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm run pack && npm run test"
   },
   "repository": {
     "type": "git",
@@ -24,19 +24,19 @@
   ],
   "author": "blackboard-innersource",
   "dependencies": {
-    "@actions/core": "^1.2.3",
+    "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.3",
     "@actions/io": "^1.0.2",
     "@actions/tool-cache": "^1.6.0"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
-    "@types/node": "^13.13.14",
+    "@types/node": "^13.13.21",
     "@typescript-eslint/parser": "^2.34.0",
     "@zeit/ncc": "^0.21.1",
     "eslint": "^6.8.0",
     "eslint-plugin-github": "^3.4.1",
-    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jest": "^23.20.0",
     "jest": "^25.5.4",
     "jest-circus": "^25.5.4",
     "js-yaml": "^3.14.0",
