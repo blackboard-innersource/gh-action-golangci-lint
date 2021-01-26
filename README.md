@@ -104,7 +104,7 @@ $ npm run test
 
 Update the distribution (required for releasing and testing workflow):
 ```bash
-$ npm run build && npm run pack
+$ npm run build && npm run package
 $ git commit -a dist/index.js -m "Update dist"
 ```
 
